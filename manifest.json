@@ -1,0 +1,12 @@
+{
+    "name": "Mayday Protocol Assistant",
+    "short_name": "Mayday",
+    "description": "Mayday Protocol puzzle assistant",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#080d16",
+    "theme_color": "#0b1220",
+    "orientation": "any",
+    "lang": "ja"
+}

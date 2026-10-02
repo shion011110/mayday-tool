@@ -1,0 +1,6248 @@
+/* ==========================================================
+   基本
+========================================================== */
+
+:root {
+    --bg: #080d16;
+    --bg-soft: #0d1522;
+    --panel: #101827;
+    --panel-soft: #111c2c;
+
+    --border: #293548;
+    --border-light: #3b475a;
+
+    --text: #f1f5f9;
+    --text-soft: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --blue: #2563eb;
+    --blue-hover: #3b82f6;
+
+    --green: #22c55e;
+    --green-dark: #15803d;
+
+    --red: #ef4444;
+    --red-dark: #991b1b;
+
+    --yellow: #fde047;
+
+    --radius: 14px;
+
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    background: var(--bg);
+    color-scheme: dark;
+}
+
+
+body {
+    margin: 0;
+
+    min-width: 320px;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #13213a 0,
+            #080d16 420px
+        );
+
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Yu Gothic UI",
+        "Meiryo",
+        sans-serif;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    touch-action: manipulation;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   ヘッダー
+========================================================== */
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    padding-top: var(--safe-top);
+
+    background: rgba(8, 13, 22, 0.94);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+.header-inner {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    min-height: 68px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.brand {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #3b82f6;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d4ed8,
+            #0f172a
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.brand-text {
+    min-width: 0;
+}
+
+
+.brand h1 {
+    margin: 0;
+
+    font-size: clamp(16px, 4.2vw, 22px);
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+.brand-subtitle {
+    margin-top: 3px;
+
+    color: #60a5fa;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================================
+   メイン
+========================================================== */
+
+.main-content {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        14px
+        14px
+        calc(28px + var(--safe-bottom));
+}
+
+
+.panel,
+.description-panel {
+    margin-bottom: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16, 24, 39, 0.98),
+            rgba(12, 20, 33, 0.98)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+.panel {
+    padding: 14px;
+}
+
+
+.description-panel {
+    padding: 14px 16px;
+
+    color: var(--text-soft);
+
+    line-height: 1.7;
+}
+
+
+.description-panel p {
+    margin:
+        6px
+        0
+        0;
+}
+
+
+.description-title {
+    color: #60a5fa;
+
+    font-weight: 800;
+}
+
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+.panel h2 {
+    margin: 0;
+
+    font-size: 18px;
+}
+
+
+.panel-subtitle {
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+/* ==========================================================
+   ボタン
+========================================================== */
+
+.button {
+    min-height: 44px;
+
+    padding: 8px 14px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.button:active {
+    transform: translateY(1px);
+}
+
+
+.button-secondary {
+    border-color: #475569;
+
+    background: #172337;
+
+    color: #e2e8f0;
+}
+
+
+.button-secondary:hover {
+    background: #1e293b;
+}
+
+
+.button-danger {
+    border-color: #ef4444;
+
+    background: #991b1b;
+}
+
+
+.button-danger:hover {
+    background: #b91c1c;
+}
+
+
+.small-button {
+    min-height: 38px;
+
+    padding:
+        6px
+        10px;
+
+    font-size: 13px;
+}
+
+
+.header-button {
+    min-height: 40px;
+
+    flex-shrink: 0;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   共通計器
+========================================================== */
+
+.gauge-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+.gauge-card {
+    min-width: 0;
+
+    padding: 10px;
+
+    border: 1px solid #2b3a4f;
+    border-radius: 10px;
+
+    background: #0d1624;
+}
+
+
+.gauge-name {
+    display: block;
+
+    margin-bottom: 6px;
+
+    overflow: hidden;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.gauge-card input {
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #475569;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #080f1b;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.gauge-card input:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 2px rgba(59, 130, 246, 0.18);
+}
+
+
+.gauge-card input::placeholder {
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   パズル一覧
+========================================================== */
+
+.clear-count {
+    flex-shrink: 0;
+
+    padding:
+        7px
+        10px;
+
+    border: 1px solid #166534;
+    border-radius: 999px;
+
+    background: rgba(21, 128, 61, 0.15);
+
+    color: #4ade80;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+.puzzle-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+.puzzle-button {
+    position: relative;
+
+    min-height: 76px;
+
+    padding:
+        10px
+        10px
+        10px
+        48px;
+
+    overflow: hidden;
+
+    border: 1px solid #334155;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #142033,
+            #0d1624
+        );
+
+    color: #f1f5f9;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.puzzle-button:active {
+    transform: scale(0.985);
+}
+
+
+.puzzle-button.completed {
+    border-color: #15803d;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 128, 61, 0.30),
+            #0d1624
+        );
+}
+
+
+.puzzle-number {
+    position: absolute;
+
+    top: 50%;
+    left: 10px;
+
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: 1px solid #475569;
+    border-radius: 8px;
+
+    background: #0b1220;
+
+    color: #60a5fa;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+.completed .puzzle-number {
+    border-color: #16a34a;
+
+    color: #4ade80;
+}
+
+
+.puzzle-name {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    line-height: 1.35;
+}
+
+
+.puzzle-status {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.completed .puzzle-status {
+    color: #4ade80;
+}
+
+
+/* ==========================================================
+   データ
+========================================================== */
+
+.danger-panel {
+    margin-top: 18px;
+}
+
+
+.data-actions {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+}
+
+
+/* ==========================================================
+   パズル仮画面
+========================================================== */
+
+.puzzle-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 500;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #13213a 0,
+            #080d16 420px
+        );
+}
+
+
+.puzzle-page {
+    width: 100%;
+    max-width: 900px;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0 auto;
+
+    padding:
+        calc(14px + var(--safe-top))
+        14px
+        calc(30px + var(--safe-bottom));
+}
+
+
+.puzzle-page-header {
+    margin-bottom: 14px;
+}
+
+
+.placeholder-panel {
+    padding: 24px 18px;
+
+    border: 1px solid #334155;
+    border-radius: 16px;
+
+    background: #101827;
+
+    text-align: center;
+}
+
+
+.placeholder-number {
+    width: 64px;
+    height: 64px;
+
+    margin:
+        0
+        auto
+        16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #3b82f6;
+    border-radius: 16px;
+
+    background: #111c2c;
+
+    color: #60a5fa;
+
+    font-size: 22px;
+    font-weight: 900;
+}
+
+
+.placeholder-panel h2 {
+    margin:
+        0
+        0
+        12px;
+}
+
+
+.placeholder-panel p {
+    color: #cbd5e1;
+
+    line-height: 1.7;
+}
+
+
+.placeholder-note {
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+
+    background: #0b1220;
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   ダイアログ
+========================================================== */
+
+.dialog-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.72);
+}
+
+
+.dialog {
+    width: min(100%, 420px);
+
+    padding: 20px;
+
+    border: 1px solid #475569;
+    border-radius: 16px;
+
+    background: #101827;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+
+.dialog h3 {
+    margin:
+        0
+        0
+        10px;
+}
+
+
+.dialog p {
+    margin:
+        0
+        0
+        18px;
+
+    color: #cbd5e1;
+
+    line-height: 1.6;
+}
+
+
+.dialog-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 8px;
+}
+
+
+/* ==========================================================
+   タブレット / PC
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .gauge-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+
+    .puzzle-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+
+    .data-actions {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (min-width: 900px) {
+
+    .puzzle-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+/* ==========================================================
+   01 シグナルカラーエンコーダー
+========================================================== */
+
+.signal-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* ==========================================================
+   解く辺
+========================================================== */
+
+.signal-side-card {
+    padding: 12px 14px;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    background: #0b1422;
+
+    text-align: center;
+}
+
+
+.signal-section-caption {
+    color: #94a3b8;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.signal-side-value {
+    margin-top: 2px;
+
+    color: #60a5fa;
+
+    font-size: 28px;
+    font-weight: 900;
+}
+
+
+.signal-side-reason {
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   現在位置
+========================================================== */
+
+.signal-position {
+    padding: 7px 12px;
+
+    border: 1px solid #2563eb;
+    border-radius: 9px;
+
+    background: rgba(37, 99, 235, 0.12);
+
+    color: #93c5fd;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   共通セクション
+========================================================== */
+
+.signal-section {
+    padding: 12px;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    background: #0d1624;
+}
+
+
+.signal-section-title {
+    margin-bottom: 8px;
+
+    color: #f8fafc;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+.signal-rule-help {
+    margin-bottom: 8px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* ==========================================================
+   色ボタン
+========================================================== */
+
+.signal-color-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+
+.signal-color-button {
+    min-width: 0;
+    min-height: 46px;
+
+    padding: 4px;
+
+    border: 2px solid transparent;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    opacity: 1;
+}
+
+
+/*
+   disabledでも色を薄くしない
+*/
+.signal-color-button:disabled {
+    opacity: 1;
+}
+
+
+/*
+   使用済み
+   Windows版と同じ白5px枠
+*/
+.signal-color-button.used {
+    border: 5px solid #ffffff;
+
+    padding: 1px;
+}
+
+
+/*
+   「最初の残り色」で選択可能
+*/
+.signal-color-button.manual-selectable {
+    border: 5px solid #ffffff;
+
+    padding: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px rgba(96, 165, 250, 0.35);
+}
+
+
+.signal-manual-message {
+    min-height: 20px;
+
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* ==========================================================
+   条件
+========================================================== */
+
+.signal-rules {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.signal-rule-choice {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 8px 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border: 1px solid #475569;
+    border-radius: 9px;
+
+    background: #111c2c;
+
+    color: #f1f5f9;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.signal-rule-choice:active {
+    transform: scale(0.99);
+
+    background: #172337;
+}
+
+
+.signal-rule-marker {
+    flex: 0 0 auto;
+
+    color: #60a5fa;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+.signal-rule-text {
+    line-height: 1.5;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/*
+   「書かれていない」の
+   「いない」だけ赤
+*/
+.signal-negative {
+    color: #ef4444;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   現在の解答
+========================================================== */
+
+.signal-result {
+    padding: 8px;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    background: #080f1b;
+
+    color: #f8fafc;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   操作
+========================================================== */
+
+.signal-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+
+/* ==========================================================
+   クリア
+========================================================== */
+
+.signal-clear {
+    scroll-margin-top: 16px;
+
+    padding: 16px 12px;
+
+    border: 2px solid #16a34a;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(21, 128, 61, 0.20),
+            rgba(13, 22, 36, 0.98)
+        );
+
+    text-align: center;
+}
+
+
+.signal-clear-title {
+    color: #4ade80;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+.signal-final-result {
+    margin-top: 12px;
+
+    color: #f1f5f9;
+
+    line-height: 1.8;
+}
+
+
+.signal-final-caption {
+    margin-top: 10px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.signal-final-order {
+    margin-top: 4px;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+.signal-arrow {
+    margin:
+        0
+        5px;
+
+    color: #60a5fa;
+}
+
+
+.signal-home-button {
+    width: 100%;
+
+    margin-top: 14px;
+
+    border: 1px solid #2563eb;
+
+    background: #1d4ed8;
+}
+
+
+/* ==========================================================
+   スマホ
+========================================================== */
+
+@media (max-width: 599px) {
+
+    .signal-page {
+        gap: 8px;
+    }
+
+
+    .signal-side-card {
+        padding: 9px 10px;
+    }
+
+
+    .signal-side-value {
+        font-size: 24px;
+    }
+
+
+    .signal-section {
+        padding: 10px;
+    }
+
+
+    .signal-color-grid {
+        gap: 4px;
+    }
+
+
+    .signal-color-button {
+        min-height: 44px;
+
+        font-size: 14px;
+    }
+
+
+    .signal-rule-choice {
+        min-height: 52px;
+
+        padding: 8px;
+    }
+
+
+    .signal-rule-text {
+        font-size: 12px;
+    }
+
+
+    .signal-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .signal-final-order {
+        font-size: 14px;
+    }
+
+}
+
+/* ==========================================================
+   パズル画面 共通UI
+========================================================== */
+
+.puzzle-common {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 2px;
+}
+
+
+/* ==========================================================
+   タイトル
+========================================================== */
+
+.puzzle-common-title-row {
+    min-height: 54px;
+
+    padding: 8px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    background: #0d1624;
+}
+
+
+.puzzle-common-title-block {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.puzzle-common-number {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #3b82f6;
+    border-radius: 9px;
+
+    background: #0b1220;
+
+    color: #60a5fa;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+
+.puzzle-common-title {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+.puzzle-common-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   概要
+========================================================== */
+
+.puzzle-common-description {
+    padding: 10px 12px;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+
+    background: #0b1422;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   共通計器
+========================================================== */
+
+.puzzle-common-gauges {
+    padding: 10px;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    background: #0d1624;
+}
+
+
+.puzzle-common-gauge-heading {
+    margin-bottom: 8px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.puzzle-common-gauge-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+
+.puzzle-common-gauge-card {
+    min-width: 0;
+
+    padding: 7px;
+
+    border: 1px solid #2b3a4f;
+    border-radius: 8px;
+
+    background: #080f1b;
+}
+
+
+.puzzle-common-gauge-name {
+    display: block;
+
+    margin-bottom: 4px;
+
+    overflow: hidden;
+
+    color: #cbd5e1;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.puzzle-common-gauge-card input {
+    width: 100%;
+    height: 38px;
+
+    border: 1px solid #475569;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #060c15;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+
+.puzzle-common-gauge-card input:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 2px rgba(59, 130, 246, 0.18);
+}
+
+
+.puzzle-common-gauge-card input::placeholder {
+    color: #475569;
+
+    font-size: 11px;
+}
+
+
+/* ==========================================================
+   スマホ
+========================================================== */
+
+@media (max-width: 599px) {
+
+    .puzzle-common-title-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .puzzle-common-title-block {
+        width: 100%;
+    }
+
+
+    .puzzle-common-actions {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .puzzle-common-actions .button {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .puzzle-common-gauge-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================================
+   少し広い画面
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .puzzle-common-gauge-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+}
+
+/* ==========================================================
+   02 緊急周波数
+========================================================== */
+
+.emergency-page {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.emergency-equipment,
+.emergency-result-card {
+    padding: 12px;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    background: #0d1624;
+}
+
+
+.emergency-section-title {
+    margin-bottom: 10px;
+
+    color: #f8fafc;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+.emergency-equipment-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+.emergency-equipment-card {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.emergency-equipment-card select {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 8px;
+
+    border: 1px solid #475569;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #060c15;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+
+.emergency-equipment-card select:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 2px rgba(59, 130, 246, 0.18);
+}
+
+
+.emergency-result-card {
+    text-align: center;
+}
+
+
+.emergency-result-label {
+    color: #94a3b8;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.emergency-table-value {
+    padding: 8px 0 5px;
+
+    color: #f8fafc;
+
+    font-size: 28px;
+    font-weight: 900;
+}
+
+
+.emergency-table-value.table-a {
+    color: #4ade80;
+}
+
+
+.emergency-table-value.table-b {
+    color: #facc15;
+}
+
+
+.emergency-table-value.table-c {
+    color: #f87171;
+}
+
+
+.emergency-frequency-value {
+    padding: 7px 0;
+
+    color: #60a5fa;
+
+    font-size: 38px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.emergency-reason {
+    min-height: 20px;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.emergency-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+
+.emergency-actions button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+.emergency-clear {
+    padding: 18px;
+
+    border: 1px solid #22c55e;
+    border-radius: 12px;
+
+    background:
+        rgba(34, 197, 94, 0.10);
+
+    text-align: center;
+}
+
+
+.emergency-clear-title {
+    margin-bottom: 12px;
+
+    color: #4ade80;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+
+.emergency-clear-result {
+    color: #e2e8f0;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+.emergency-clear-result strong {
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+
+@media (max-width: 599px) {
+
+    .emergency-equipment-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+
+    .emergency-equipment {
+        padding: 10px;
+    }
+
+
+    .emergency-equipment-card select {
+        height: 40px;
+
+        font-size: 16px;
+    }
+
+
+    .emergency-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================================
+   02 最初からやり直すボタン
+========================================================== */
+
+#emergencyReset {
+    background: #dc2626;
+    border-color: #dc2626;
+    color: #ffffff;
+}
+
+#emergencyReset:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+#emergencyReset:active {
+    background: #991b1b;
+    border-color: #991b1b;
+}
+
+/* ==========================================================
+   02 ゲームクリアを登録ボタン
+========================================================== */
+
+#emergencyComplete {
+    background: #16a34a;
+    border: 2px solid #14532d;
+    color: #ffffff;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+#emergencyComplete:hover:not(:disabled) {
+    background: #22c55e;
+    border-color: #166534;
+    color: #ffffff;
+}
+
+#emergencyComplete:active:not(:disabled) {
+    background: #15803d;
+    border-color: #052e16;
+    color: #ffffff;
+}
+
+#emergencyComplete:disabled {
+    background: #166534;
+    border-color: #14532d;
+    color: #ffffff;
+
+    opacity: 0.45;
+}
+
+/* ==========================================================
+   03 脅威マッピンググリッド
+========================================================== */
+
+.threat-mapping-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   TABLE一覧
+========================================================== */
+
+.threat-tables {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-top: 8px;
+}
+
+
+/* ==========================================================
+   TABLEカード
+========================================================== */
+
+.threat-table-card {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding:
+        6px 6px 7px;
+
+    background:
+        #101827;
+
+    border:
+        1px solid #526074;
+
+    border-radius:
+        7px;
+}
+
+
+/* ==========================================================
+   TABLEタイトル
+========================================================== */
+
+.threat-table-title {
+    color:
+        #f8fafc;
+
+    text-align:
+        center;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    line-height:
+        18px;
+
+    margin-bottom:
+        2px;
+}
+
+
+/* ==========================================================
+   上側座標
+========================================================== */
+
+.threat-column-header {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(8, 1fr);
+
+    margin-right:
+        18px;
+
+    margin-bottom:
+        2px;
+}
+
+
+.threat-column-label {
+    color:
+        #f2c94c;
+
+    text-align:
+        center;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    line-height:
+        14px;
+}
+
+
+/* ==========================================================
+   盤面＋右側番号
+========================================================== */
+
+.threat-board-area {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        18px;
+
+    width:
+        100%;
+}
+
+
+/* ==========================================================
+   8 × 8
+========================================================== */
+
+.threat-board {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(8, 1fr);
+
+    aspect-ratio:
+        1 / 1;
+
+    width:
+        100%;
+
+    overflow:
+        hidden;
+
+    background:
+        #1b2738;
+
+    border:
+        1px solid #0d1522;
+}
+
+
+/* ==========================================================
+   セル
+========================================================== */
+
+.threat-cell {
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    box-sizing:
+        border-box;
+
+    min-width:
+        0;
+
+    min-height:
+        0;
+
+    background:
+        #1b2738;
+
+    border-right:
+        1px solid #0d1522;
+
+    border-bottom:
+        1px solid #0d1522;
+}
+
+
+.threat-cell.green {
+    background:
+        #22c55e;
+}
+
+
+.threat-cell.red {
+    background:
+        #ef4d4d;
+}
+
+
+.threat-cell.bomb {
+    background:
+        #050509;
+}
+
+
+/* ==========================================================
+   右側 1～8
+========================================================== */
+
+.threat-row-labels {
+    display:
+        grid;
+
+    grid-template-rows:
+        repeat(8, 1fr);
+}
+
+
+.threat-row-label {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        #f2c94c;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+}
+
+
+/* ==========================================================
+   爆弾
+========================================================== */
+
+.threat-bomb {
+    position:
+        relative;
+
+    width:
+        72%;
+
+    height:
+        72%;
+}
+
+
+.threat-bomb-body {
+    position:
+        absolute;
+
+    left:
+        17%;
+
+    top:
+        25%;
+
+    width:
+        58%;
+
+    height:
+        58%;
+
+    border-radius:
+        50%;
+
+    background:
+        #6d28d9;
+
+    box-shadow:
+        inset 3px 3px 0
+        rgba(255, 255, 255, 0.28);
+}
+
+
+.threat-bomb-cap {
+    position:
+        absolute;
+
+    left:
+        40%;
+
+    top:
+        15%;
+
+    width:
+        24%;
+
+    height:
+        18%;
+
+    background:
+        #17131d;
+}
+
+
+.threat-bomb-fuse {
+    position:
+        absolute;
+
+    left:
+        58%;
+
+    top:
+        4%;
+
+    width:
+        30%;
+
+    height:
+        30%;
+
+    border-top:
+        2px solid #b7791f;
+
+    border-right:
+        2px solid #b7791f;
+
+    border-radius:
+        50%;
+}
+
+
+.threat-bomb-spark {
+    position:
+        absolute;
+
+    right:
+        2%;
+
+    top:
+        0;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #f59e0b;
+
+    box-shadow:
+        0 -4px 0 -1px #f59e0b,
+        0 4px 0 -1px #f59e0b,
+        -4px 0 0 -1px #f59e0b,
+        4px 0 0 -1px #f59e0b;
+}
+
+
+/* ==========================================================
+   クリア操作
+========================================================== */
+
+.threat-completion-controls {
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    margin-top:
+        16px;
+
+    margin-bottom:
+        8px;
+}
+
+
+#threatCancel {
+    background:
+        #dc2626;
+
+    border-color:
+        #991b1b;
+
+    color:
+        #ffffff;
+
+    font-weight:
+        800;
+}
+
+
+#threatCancel:hover:not(:disabled) {
+    background:
+        #b91c1c;
+}
+
+
+#threatComplete {
+    background:
+        #16a34a;
+
+    border:
+        2px solid #14532d;
+
+    color:
+        #ffffff;
+
+    font-weight:
+        900;
+}
+
+
+#threatComplete:hover:not(:disabled) {
+    background:
+        #22c55e;
+}
+
+
+#threatComplete:active:not(:disabled) {
+    background:
+        #15803d;
+}
+
+
+#threatComplete:disabled,
+#threatCancel:disabled {
+    opacity:
+        0.45;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.threat-clear-box {
+    margin-top:
+        12px;
+
+    padding:
+        20px 12px;
+
+    background:
+        #10251a;
+
+    border:
+        2px solid #16a34a;
+
+    border-radius:
+        10px;
+
+    text-align:
+        center;
+}
+
+
+.threat-clear-title {
+    color:
+        #4ade80;
+
+    font-size:
+        21px;
+
+    font-weight:
+        900;
+}
+
+
+/* ==========================================================
+   少し広いスマホ・タブレット
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .threat-tables {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap:
+            10px;
+    }
+
+}
+
+
+/* ==========================================================
+   PC
+========================================================== */
+
+@media (min-width: 900px) {
+
+    .threat-tables {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================================
+   非常に狭い画面
+========================================================== */
+
+@media (max-width: 360px) {
+
+    .threat-tables {
+        gap:
+            5px;
+    }
+
+
+    .threat-table-card {
+        padding:
+            4px;
+    }
+
+
+    .threat-table-title {
+        font-size:
+            11px;
+    }
+
+
+    .threat-column-header {
+        margin-right:
+            15px;
+    }
+
+
+    .threat-board-area {
+        grid-template-columns:
+            minmax(0, 1fr)
+            15px;
+    }
+
+
+    .threat-column-label,
+    .threat-row-label {
+        font-size:
+            9px;
+    }
+
+}
+
+/* ==========================================================
+   04 高度検証モジュール
+========================================================== */
+
+.altitude-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.altitude-phases {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.altitude-phase {
+    padding: 14px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.altitude-phase-heading {
+    margin-bottom: 8px;
+    color: #f2c94c;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.altitude-table-name {
+    padding: 6px;
+    color: #f9fafb;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.altitude-table-name.ready {
+    color: #4ade80;
+}
+
+.altitude-reason {
+    min-height: 20px;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.altitude-subtitle {
+    margin-bottom: 7px;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.altitude-word-list {
+    display: grid;
+    gap: 6px;
+}
+
+.altitude-word-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 42px;
+    overflow: hidden;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 7px;
+}
+
+.altitude-word-row span {
+    padding: 8px;
+    color: #e2e8f0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.altitude-word-row strong {
+    padding: 8px;
+    color: #f8fafc;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border-left: 1px solid #475569;
+}
+
+.altitude-number-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
+
+.altitude-number {
+    padding: 11px 5px;
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 7px;
+    color: #f8fafc;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.altitude-complete {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+
+    background: #16a34a;
+    border: 2px solid #14532d;
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.altitude-complete:hover:not(:disabled) {
+    background: #22c55e;
+}
+
+.altitude-complete:active:not(:disabled) {
+    background: #15803d;
+}
+
+.altitude-complete:disabled {
+    background: #166534;
+    border-color: #14532d;
+    color: #ffffff;
+    opacity: 0.45;
+}
+
+@media (min-width: 700px) {
+
+    .altitude-phases {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* ==========================================================
+   05 回路フロートラッカー
+========================================================== */
+
+.circuit-flow-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   数字選択
+========================================================== */
+
+.circuit-selector-panel {
+    margin-top: 10px;
+    padding: 12px;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+
+.circuit-selector-label {
+    margin-bottom: 9px;
+
+    color: #cbd5e1;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+.circuit-number-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+
+.circuit-number-button {
+    min-height: 48px;
+
+    background: #1e293b;
+
+    color: #f8fafc;
+
+    border: 2px solid #475569;
+    border-radius: 8px;
+
+    font-size: 21px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.12s ease,
+        border-color 0.12s ease,
+        transform 0.08s ease;
+}
+
+
+.circuit-number-button:active {
+    transform: scale(0.97);
+}
+
+
+.circuit-number-button.selected {
+    background: #1d4ed8;
+
+    border-color: #60a5fa;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   テーブル
+========================================================== */
+
+.circuit-table-panel {
+    margin-top: 10px;
+    padding: 10px;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+
+.circuit-table-title {
+    margin-bottom: 9px;
+
+    color: #f2c94c;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   画像
+========================================================== */
+
+.circuit-image-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 180px;
+
+    overflow: hidden;
+
+    background: #101827;
+
+    border-radius: 7px;
+}
+
+
+.circuit-table-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================================
+   画像エラー
+========================================================== */
+
+.circuit-image-error {
+    width: 100%;
+
+    padding: 30px 12px;
+
+    color: #f87171;
+
+    text-align: center;
+
+    white-space: pre-wrap;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.circuit-complete {
+    display: block;
+
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 14px;
+
+    background: #15803d;
+
+    color: #ffffff;
+
+    border: 2px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+.circuit-complete:hover {
+    background: #16a34a;
+}
+
+
+.circuit-complete:active {
+    background: #166534;
+}
+
+/* ==========================================================
+   タブレット以上
+========================================================== */
+
+@media (min-width: 700px) {
+
+    .circuit-table-image {
+        max-width: 850px;
+    }
+
+
+    .circuit-number-buttons {
+        max-width: 500px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+/* ==========================================================
+   06 シェイプ衝突マトリクス
+========================================================== */
+
+.shape-collision-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.shape-notice {
+    margin: 10px 0;
+    color: #fbbf24;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   メイン結果
+========================================================== */
+
+.shape-results-panel {
+    padding: 14px;
+    background: #101827;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.shape-select-button {
+    display: block;
+    width: min(100%, 300px);
+    min-height: 52px;
+    margin: 0 auto 14px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border: 1px solid #3b82f6;
+    border-radius: 9px;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.shape-select-button:active {
+    background: #1d4ed8;
+}
+
+.shape-main-results {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.shape-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 70px;
+
+    background: #172337;
+    color: #64748b;
+
+    border: 2px solid #334155;
+    border-radius: 9px;
+
+    font-size: clamp(15px, 4vw, 23px);
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.shape-complete {
+    display: block;
+
+    width: 100%;
+    min-height: 52px;
+
+    margin-top: 14px;
+
+    background: #15803d;
+    color: #ffffff;
+
+    border: 2px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.shape-complete:active:not(:disabled) {
+    background: #166534;
+}
+
+.shape-complete:disabled {
+    opacity: 0.42;
+}
+
+
+/* ==========================================================
+   選択画面
+========================================================== */
+
+body.shape-selector-open {
+    overflow: hidden;
+}
+
+.shape-selector-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    background: rgba(2, 6, 23, 0.92);
+}
+
+.shape-selector-dialog {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 800px;
+    height: 100dvh;
+
+    box-sizing: border-box;
+
+    padding:
+        max(10px, env(safe-area-inset-top))
+        10px
+        max(10px, env(safe-area-inset-bottom));
+
+    overflow: hidden;
+
+    background: #101827;
+}
+
+
+/* ==========================================================
+   選択画面上部4色
+========================================================== */
+
+.shape-selector-results {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+
+    flex: 0 0 auto;
+}
+
+.shape-selector-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 45px;
+
+    background: #172337;
+    color: #64748b;
+
+    border: 2px solid #334155;
+    border-radius: 7px;
+
+    font-size: clamp(13px, 4vw, 19px);
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   選択済み上画像
+========================================================== */
+
+.shape-selected-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 64px;
+
+    margin-top: 7px;
+    padding: 4px 10px;
+
+    flex: 0 0 auto;
+
+    background: #162235;
+
+    border: 1px solid #22d3ee;
+    border-radius: 8px;
+}
+
+.shape-selected-top-label {
+    color: #22d3ee;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.shape-selected-top strong {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.shape-selected-top img {
+    width: 58px;
+    height: 52px;
+
+    object-fit: contain;
+
+    background: #0b1220;
+
+    border: 1px solid #475569;
+    border-radius: 5px;
+}
+
+
+/* ==========================================================
+   案内
+========================================================== */
+
+.shape-selector-guide {
+    padding: 8px 3px 7px;
+
+    flex: 0 0 auto;
+
+    color: #f8fafc;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   20画像
+
+   スマホ = 4列
+   広い画面 = 5列
+========================================================== */
+
+.shape-choices {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 6px;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    padding: 2px 2px 8px;
+}
+
+.shape-choice {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    min-width: 0;
+
+    padding: 3px;
+
+    background: #111c2c;
+
+    border: 1px solid #334155;
+    border-radius: 7px;
+
+    color: #f8fafc;
+}
+
+.shape-choice:active {
+    background: #164e63;
+    border-color: #22d3ee;
+}
+
+.shape-choice-number {
+    display: block;
+
+    height: 20px;
+
+    text-align: center;
+
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 900;
+}
+
+.shape-choice-image-box {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    aspect-ratio: 1.08 / 1;
+
+    overflow: hidden;
+
+    background: #0b1220;
+
+    border: 1px solid #3b475a;
+    border-radius: 5px;
+}
+
+.shape-choice-image {
+    display: block;
+
+    width: 92%;
+    height: 92%;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================================
+   下部操作
+========================================================== */
+
+.shape-selector-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 6px;
+
+    padding-top: 8px;
+
+    flex: 0 0 auto;
+}
+
+.shape-secondary-button,
+.shape-reset-button {
+    min-height: 43px;
+
+    padding: 6px 8px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.shape-secondary-button {
+    background: #1e293b;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+}
+
+.shape-reset-button {
+    background: #b91c1c;
+    color: #ffffff;
+
+    border: 1px solid #ef4444;
+}
+
+.shape-secondary-button:disabled {
+    opacity: 0.4;
+}
+
+#shapeCloseSelector {
+    grid-column: 1 / -1;
+}
+
+
+/* ==========================================================
+   hidden
+========================================================== */
+
+.shape-selector-overlay.hidden,
+.shape-selected-top.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   広い画面
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .shape-choices {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+    .shape-selector-actions {
+        grid-template-columns:
+            1fr 1fr 1fr;
+    }
+
+    #shapeCloseSelector {
+        grid-column: auto;
+    }
+}
+/* ==========================================================
+   06 選択画面
+   20個をスクロールなしで全部表示
+========================================================== */
+
+body.shape-selector-open {
+    overflow: hidden;
+}
+
+.shape-selector-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    background: rgba(2, 6, 23, 0.94);
+}
+
+.shape-selector-dialog {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 800px;
+
+    height: 100dvh;
+    max-height: 100dvh;
+
+    box-sizing: border-box;
+
+    padding:
+        max(5px, env(safe-area-inset-top))
+        5px
+        max(5px, env(safe-area-inset-bottom));
+
+    overflow: hidden;
+
+    background: #101827;
+}
+
+
+/* ==========================================================
+   上部4色
+========================================================== */
+
+.shape-selector-results {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 3px;
+
+    flex: 0 0 auto;
+}
+
+.shape-selector-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    height: 34px;
+
+    background: #172337;
+    color: #64748b;
+
+    border: 1px solid #334155;
+    border-radius: 5px;
+
+    font-size: clamp(11px, 3.2vw, 16px);
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   選択済み「上」
+
+   下を選択するときだけ表示
+========================================================== */
+
+.shape-selected-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    height: 43px;
+    min-height: 43px;
+
+    margin-top: 3px;
+    padding: 2px 6px;
+
+    box-sizing: border-box;
+
+    flex: 0 0 auto;
+
+    background: #162235;
+
+    border: 1px solid #22d3ee;
+    border-radius: 5px;
+}
+
+.shape-selected-top-label {
+    color: #22d3ee;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.shape-selected-top strong {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.shape-selected-top img {
+    width: 38px;
+    height: 36px;
+
+    object-fit: contain;
+
+    background: #0b1220;
+
+    border: 1px solid #475569;
+    border-radius: 4px;
+}
+
+
+/* ==========================================================
+   案内
+========================================================== */
+
+.shape-selector-guide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 27px;
+    min-height: 27px;
+
+    padding: 0 2px;
+
+    flex: 0 0 auto;
+
+    color: #f8fafc;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   20個の絵柄
+
+   ★常に5列×4行
+   ★スクロールなし
+   ★残り高さを4等分
+========================================================== */
+
+.shape-choices {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    grid-template-rows:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 3px;
+
+    flex: 1 1 0;
+
+    width: 100%;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   1個の絵柄
+========================================================== */
+
+.shape-choice {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+    justify-content: stretch;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 2px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: #111c2c;
+
+    border: 1px solid #334155;
+    border-radius: 4px;
+
+    color: #f8fafc;
+
+    touch-action: manipulation;
+}
+
+.shape-choice:active {
+    background: #164e63;
+
+    border-color: #22d3ee;
+}
+
+
+/* ==========================================================
+   01～20番号
+========================================================== */
+
+.shape-choice-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 15px;
+
+    height: 15px;
+
+    color: #f8fafc;
+
+    text-align: center;
+
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   画像枠
+========================================================== */
+
+.shape-choice-image-box {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 1 1 0;
+
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: #0b1220;
+
+    border: none;
+    border-radius: 3px;
+}
+
+
+/* ==========================================================
+   画像本体
+========================================================== */
+
+.shape-choice-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================================
+   下部ボタン
+========================================================== */
+
+.shape-selector-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 0.7fr;
+
+    gap: 3px;
+
+    padding-top: 4px;
+
+    flex: 0 0 auto;
+}
+
+.shape-secondary-button,
+.shape-reset-button {
+    min-width: 0;
+
+    height: 37px;
+    min-height: 37px;
+
+    padding: 2px 3px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.shape-secondary-button {
+    background: #1e293b;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+}
+
+.shape-reset-button {
+    background: #b91c1c;
+    color: #ffffff;
+
+    border: 1px solid #ef4444;
+}
+
+.shape-secondary-button:disabled {
+    opacity: 0.4;
+}
+
+#shapeCloseSelector {
+    grid-column: auto;
+}
+
+
+/* ==========================================================
+   hidden
+========================================================== */
+
+.shape-selector-overlay.hidden,
+.shape-selected-top.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   高さがかなり小さいスマホ
+========================================================== */
+
+@media (max-height: 650px) {
+
+    .shape-selector-result {
+        height: 28px;
+
+        font-size: 10px;
+    }
+
+    .shape-selected-top {
+        height: 36px;
+        min-height: 36px;
+    }
+
+    .shape-selected-top img {
+        width: 31px;
+        height: 30px;
+    }
+
+    .shape-selector-guide {
+        height: 22px;
+        min-height: 22px;
+
+        font-size: 11px;
+    }
+
+    .shape-choice-number {
+        flex-basis: 12px;
+
+        height: 12px;
+
+        font-size: 8px;
+    }
+
+    .shape-secondary-button,
+    .shape-reset-button {
+        height: 32px;
+        min-height: 32px;
+
+        font-size: 9px;
+    }
+}
+/* ==========================================================
+   07 圧力緊急対応
+========================================================== */
+
+.pressure-emergency-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   発動選択
+========================================================== */
+
+.pressure-activation-panel {
+    margin-top: 10px;
+    padding: 8px;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.pressure-activation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+.pressure-activation-item {
+    min-width: 0;
+
+    padding: 8px 4px;
+
+    text-align: center;
+
+    background: #111c2c;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+}
+
+.pressure-activation-title {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.pressure-activation-item.first
+.pressure-activation-title {
+    color: #facc15;
+}
+
+.pressure-activation-item.second
+.pressure-activation-title {
+    color: #fb923c;
+}
+
+.pressure-activation-item.third
+.pressure-activation-title {
+    color: #f87171;
+}
+
+.pressure-reference {
+    min-height: 31px;
+
+    margin-top: 3px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+.pressure-activation-button {
+    width: 100%;
+    min-height: 43px;
+
+    padding: 4px 2px;
+
+    background: #1e293b;
+    color: #f8fafc;
+
+    border: 2px solid #475569;
+    border-radius: 7px;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    touch-action: manipulation;
+}
+
+.pressure-activation-button:active {
+    transform: scale(0.97);
+}
+
+.pressure-activation-button.selected {
+    background: #1d4ed8;
+
+    border-color: #60a5fa;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   結果
+========================================================== */
+
+.pressure-result-panel {
+    margin-top: 10px;
+    padding: 14px 10px;
+
+    text-align: center;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.pressure-result-status {
+    color: #cbd5e1;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.pressure-result-code {
+    margin: 8px 0;
+
+    color: #22d3ee;
+
+    font-size: clamp(44px, 15vw, 72px);
+    line-height: 1;
+    letter-spacing: 0.08em;
+    font-weight: 900;
+}
+
+.pressure-result-detail {
+    min-height: 22px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.pressure-complete {
+    display: block;
+
+    width: 100%;
+    min-height: 50px;
+
+    margin-top: 12px;
+
+    background: #15803d;
+    color: #ffffff;
+
+    border: 2px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.pressure-complete:active {
+    background: #166534;
+}
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+.pressure-reset {
+    display: block;
+
+    width: 100%;
+    min-height: 45px;
+
+    margin-top: 8px;
+
+    background: #991b1b;
+    color: #ffffff;
+
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.pressure-reset:active {
+    background: #7f1d1d;
+}
+
+
+/* ==========================================================
+   少し広い画面
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .pressure-reference {
+        font-size: 13px;
+    }
+
+    .pressure-activation-button {
+        font-size: 14px;
+    }
+
+    .pressure-activation-panel,
+    .pressure-result-panel {
+        padding: 14px;
+    }
+}
+/* ==========================================================
+   08 マルチ回路スイッチングパネル
+========================================================== */
+
+.multi-circuit-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   フェーズ3 常時表示
+========================================================== */
+
+.multi-phase3-notice {
+    margin: 7px 0 9px;
+    padding: 6px;
+
+    color: #d1d5db;
+
+    text-align: center;
+
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.multi-phase3-notice strong {
+    color: #ef4444;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   フェーズ
+========================================================== */
+
+.multi-phase-panel {
+    margin-bottom: 9px;
+    padding: 10px;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.multi-phase-panel h3 {
+    margin: 0 0 8px;
+
+    color: #f8fafc;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   フェーズ1 色
+========================================================== */
+
+.multi-color-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 5px;
+}
+
+.multi-color-button {
+    min-width: 0;
+    min-height: 42px;
+
+    padding: 4px;
+
+    background: #1f2937;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    touch-action: manipulation;
+}
+
+
+/* 黄 */
+
+.multi-color-button.yellow {
+    color: #fef08a;
+    border: 1px solid #facc15;
+}
+
+.multi-color-button.yellow.selected {
+    background: #713f12;
+    border: 3px solid #facc15;
+}
+
+
+/* 赤 */
+
+.multi-color-button.red {
+    color: #fecaca;
+    border: 1px solid #ef4444;
+}
+
+.multi-color-button.red.selected {
+    background: #7f1d1d;
+    border: 3px solid #ef4444;
+}
+
+
+/* 緑 */
+
+.multi-color-button.green {
+    color: #bbf7d0;
+    border: 1px solid #22c55e;
+}
+
+.multi-color-button.green.selected {
+    background: #14532d;
+    border: 3px solid #22c55e;
+}
+
+
+/* 青 */
+
+.multi-color-button.blue {
+    color: #bfdbfe;
+    border: 1px solid #3b82f6;
+}
+
+.multi-color-button.blue.selected {
+    background: #1e3a8a;
+    border: 3px solid #3b82f6;
+}
+
+
+/* ==========================================================
+   選択色
+========================================================== */
+
+.multi-selected-color {
+    padding: 5px 2px;
+
+    color: #d1d5db;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   8スイッチ
+========================================================== */
+
+.multi-switch-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 3px;
+
+    padding: 5px;
+
+    background: #111827;
+
+    border: 1px solid #374151;
+    border-radius: 8px;
+}
+
+.multi-switch-cell {
+    min-width: 0;
+
+    text-align: center;
+}
+
+.multi-switch-cell span {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.multi-switch-value {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #5eead4;
+
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   LED
+========================================================== */
+
+.multi-led-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+.multi-led-button {
+    min-width: 0;
+    min-height: 44px;
+
+    background: #1f2937;
+    color: #f9fafb;
+
+    border: 1px solid #6b7280;
+    border-radius: 7px;
+
+    font-size: 20px;
+    font-weight: 900;
+
+    touch-action: manipulation;
+}
+
+.multi-led-button.selected {
+    background: #4c1d95;
+    color: #ffffff;
+
+    border: 2px solid #a78bfa;
+}
+
+.multi-led-button:disabled {
+    opacity: 0.35;
+}
+
+
+/* ==========================================================
+   LED入力順
+========================================================== */
+
+.multi-led-sequence {
+    padding: 6px 0 3px;
+
+    color: #f9fafb;
+
+    text-align: center;
+
+    font-size: clamp(17px, 5vw, 21px);
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   LED回答
+========================================================== */
+
+.multi-answer-caption {
+    color: #9ca3af;
+
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.multi-led-answer {
+    color: #f472b6;
+
+    text-align: center;
+
+    font-size: 32px;
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   LEDリセット
+========================================================== */
+
+.multi-led-reset {
+    display: block;
+
+    width: fit-content;
+
+    min-height: 34px;
+
+    margin: 5px auto 0;
+    padding: 4px 12px;
+
+    background: #1e293b;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   最下部
+========================================================== */
+
+.multi-actions {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 7px;
+
+    margin-top: 5px;
+}
+
+.multi-reset,
+.multi-complete {
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 5px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.multi-reset {
+    background: #991b1b;
+    color: #ffffff;
+
+    border: 1px solid #ef4444;
+}
+
+.multi-complete {
+    background: #15803d;
+    color: #ffffff;
+
+    border: 2px solid #22c55e;
+}
+
+.multi-complete:disabled {
+    opacity: 0.4;
+}
+
+
+/* ==========================================================
+   横幅がかなり小さい端末
+========================================================== */
+
+@media (max-width: 370px) {
+
+    .multi-switch-cell span {
+        font-size: 9px;
+    }
+
+    .multi-switch-value {
+        font-size: 18px;
+    }
+
+    .multi-color-button {
+        font-size: 14px;
+    }
+
+    .multi-phase3-notice {
+        font-size: 13px;
+    }
+}
+/* ==========================================================
+   09 誘導オーバーライド
+========================================================== */
+
+.guidance-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.guidance-panel {
+    margin: 9px 0;
+    padding: 10px;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.guidance-panel.hidden {
+    display: none !important;
+}
+
+.guidance-panel h3 {
+    margin: 0 0 10px;
+
+    color: #f8fafc;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   キャプション
+========================================================== */
+
+.guidance-caption {
+    margin: 5px 0;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.guidance-caption.red {
+    color: #f87171;
+}
+
+.guidance-caption.green {
+    color: #4ade80;
+}
+
+
+/* ==========================================================
+   赤ランプ
+========================================================== */
+
+.guidance-red-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+.guidance-red-button {
+    min-width: 0;
+    min-height: 42px;
+
+    background: #1f2937;
+    color: #f9fafb;
+
+    border: 1px solid #4b5563;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.guidance-red-button.selected {
+    background: #7f1d1d;
+    color: #fecaca;
+
+    border: 2px solid #f87171;
+}
+
+
+/* ==========================================================
+   テーブル / 現在位置
+========================================================== */
+
+.guidance-table-name {
+    padding: 7px 2px 3px;
+
+    color: #f87171;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.guidance-current-position {
+    padding: 5px 2px 8px;
+
+    color: #facc15;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   方向パッド
+========================================================== */
+
+.guidance-pad {
+    display: grid;
+
+    grid-template-columns:
+        58px 58px 58px;
+
+    grid-template-rows:
+        58px 58px 58px;
+
+    gap: 5px;
+
+    justify-content: center;
+
+    margin: 3px auto 7px;
+}
+
+.guidance-direction-button {
+    width: 58px;
+    height: 58px;
+
+    padding: 0;
+
+    background: #1f2937;
+    color: #f9fafb;
+
+    border: 2px solid #64748b;
+    border-radius: 8px;
+
+    font-size: 23px;
+    font-weight: 900;
+
+    touch-action: manipulation;
+}
+
+.guidance-direction-button:active {
+    background: #0c4a6e;
+    border-color: #7dd3fc;
+}
+
+.guidance-direction-button:disabled {
+    background: #111827;
+    color: #4b5563;
+
+    border: 1px solid #374151;
+}
+
+.guidance-direction-button.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.guidance-direction-button.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.guidance-direction-button.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.guidance-direction-button.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.guidance-pad-center {
+    display: flex;
+
+    grid-column: 2;
+    grid-row: 2;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    box-sizing: border-box;
+
+    color: #4b5563;
+    background: #111827;
+
+    border: 1px solid #374151;
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+
+/* ==========================================================
+   戻す
+========================================================== */
+
+.guidance-edit-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 6px;
+
+    max-width: 430px;
+
+    margin: 0 auto 8px;
+}
+
+.guidance-secondary {
+    min-width: 0;
+    min-height: 37px;
+
+    padding: 4px;
+
+    background: #1e293b;
+    color: #f8fafc;
+
+    border: 1px solid #475569;
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.guidance-secondary:disabled {
+    opacity: 0.4;
+}
+
+
+/* ==========================================================
+   フェーズ1 上段 / 下段
+========================================================== */
+
+.guidance-switch-table,
+.guidance-phase2-table {
+    display: grid;
+
+    grid-template-columns:
+        42px repeat(6, minmax(0, 1fr));
+
+    gap: 3px;
+
+    padding: 6px;
+
+    background: #111827;
+
+    border: 1px solid #374151;
+    border-radius: 8px;
+}
+
+.guidance-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.guidance-row-name {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #d1d5db;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.guidance-row-name.lower {
+    color: #4ade80;
+}
+
+.guidance-upper-value,
+.guidance-lower-value {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 39px;
+
+    background: #1f2937;
+
+    border: 1px solid #374151;
+    border-radius: 4px;
+
+    font-size: clamp(17px, 5vw, 24px);
+    font-weight: 900;
+}
+
+.guidance-upper-value {
+    color: #f9fafb;
+}
+
+.guidance-lower-value {
+    color: #4ade80;
+}
+
+.guidance-phase1-complete {
+    min-height: 20px;
+
+    padding-top: 6px;
+
+    color: #4ade80;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   フェーズ2
+========================================================== */
+
+.guidance-phase2-description {
+    margin-bottom: 8px;
+
+    color: #d1d5db;
+
+    text-align: center;
+
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   緑ランプ 0～6
+========================================================== */
+
+.guidance-green-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    gap: 3px;
+}
+
+.guidance-green-button {
+    min-width: 0;
+    min-height: 39px;
+
+    padding: 2px;
+
+    background: #1f2937;
+    color: #f9fafb;
+
+    border: 1px solid #4b5563;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.guidance-green-button.selected {
+    background: #14532d;
+    color: #bbf7d0;
+
+    border: 2px solid #4ade80;
+}
+
+
+/* ==========================================================
+   使用計器 / 条件
+========================================================== */
+
+.guidance-gauge-name {
+    padding-top: 8px;
+
+    color: #facc15;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.guidance-condition {
+    min-height: 24px;
+
+    padding: 4px 2px 7px;
+
+    color: #d1d5db;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   フェーズ2方向
+========================================================== */
+
+.guidance-phase2-direction {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 41px;
+
+    color: #64748b;
+
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.guidance-phase2-direction.active {
+    color: #4ade80;
+
+    font-size: 25px;
+}
+
+
+/* ==========================================================
+   記号回答
+========================================================== */
+
+.guidance-answer {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 6px;
+
+    margin-top: 9px;
+    padding: 9px 5px;
+
+    background: #111827;
+
+    border: 1px solid #374151;
+    border-radius: 8px;
+}
+
+.guidance-symbol {
+    min-width: 0;
+
+    text-align: center;
+}
+
+.guidance-symbol-name {
+    min-height: 31px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+.guidance-symbol-value {
+    color: #4ade80;
+
+    font-size: clamp(28px, 9vw, 40px);
+    line-height: 1;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.guidance-complete {
+    display: block;
+
+    width: 100%;
+    min-height: 50px;
+
+    margin-top: 10px;
+
+    background: #15803d;
+    color: #ffffff;
+
+    border: 2px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.guidance-complete:disabled {
+    opacity: 0.4;
+}
+
+
+/* ==========================================================
+   小さい端末
+========================================================== */
+
+@media (max-width: 370px) {
+
+    .guidance-switch-table,
+    .guidance-phase2-table {
+        grid-template-columns:
+            34px repeat(6, minmax(0, 1fr));
+
+        gap: 2px;
+
+        padding: 4px;
+    }
+
+    .guidance-row-name {
+        font-size: 9px;
+    }
+
+    .guidance-upper-value,
+    .guidance-lower-value {
+        min-height: 35px;
+
+        font-size: 17px;
+    }
+
+    .guidance-phase2-direction {
+        min-height: 37px;
+
+        font-size: 18px;
+    }
+
+    .guidance-phase2-direction.active {
+        font-size: 21px;
+    }
+}
+/* ==========================================================
+   10 レーダー航法プロトコル
+========================================================== */
+
+.radar-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.radar-content .hidden {
+    display: none !important;
+}
+
+.radar-warning {
+    margin: 8px 0 10px;
+    padding: 10px 12px;
+
+    color: #FBBF24;
+    background: #3A2420;
+
+    border-left: 4px solid #F97316;
+    border-radius: 4px;
+
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 800;
+}
+
+.radar-panel {
+    margin: 9px 0;
+    padding: 10px;
+
+    background: #101827;
+
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.radar-panel h3 {
+    margin: 0 0 7px;
+
+    color: #F8FAFC;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.radar-help {
+    margin-bottom: 8px;
+
+    color: #94A3B8;
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+/* ==========================================================
+   図形入力
+========================================================== */
+
+.radar-input-list {
+    display: grid;
+    gap: 6px;
+}
+
+.radar-shape-row {
+    padding: 7px;
+
+    background: #111827;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.radar-shape-row.current {
+    background: #172033;
+    border: 2px solid #FACC15;
+}
+
+.radar-shape-header {
+    display: grid;
+
+    grid-template-columns:
+        minmax(68px, 1fr)
+        64px
+        minmax(58px, 1fr);
+
+    align-items: center;
+
+    min-height: 42px;
+}
+
+.radar-shape-header strong {
+    color: #F8FAFC;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.radar-input-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.radar-shape-svg {
+    display: block;
+
+    width: 54px;
+    height: 42px;
+}
+
+.radar-shape-status {
+    color: #64748B;
+
+    text-align: right;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.radar-shape-status.selected {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   色ボタン
+========================================================== */
+
+.radar-color-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 4px;
+
+    margin-top: 4px;
+}
+
+.radar-color-button {
+    min-width: 0;
+    min-height: 39px;
+
+    padding: 3px;
+
+    background: #1F2937;
+    color: var(--radar-color);
+
+    border: 1px solid #475569;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    touch-action: manipulation;
+}
+
+.radar-color-button.selected {
+    background:
+        var(--radar-selected-bg);
+
+    border:
+        2px solid var(--radar-color);
+}
+
+.radar-color-button:disabled {
+    background: #111827;
+
+    border-color: #273244;
+
+    opacity: 0.48;
+}
+
+
+/* ==========================================================
+   戻す
+========================================================== */
+
+.radar-edit-actions {
+    display: grid;
+
+    grid-template-columns:
+        0.75fr 1.25fr;
+
+    gap: 6px;
+
+    margin-top: 8px;
+}
+
+.radar-secondary {
+    min-width: 0;
+    min-height: 40px;
+
+    padding: 4px;
+
+    background: #1E293B;
+    color: #F8FAFC;
+
+    border: 1px solid #475569;
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.radar-secondary:disabled {
+    opacity: 0.35;
+}
+
+
+/* ==========================================================
+   条件一覧
+========================================================== */
+
+.radar-rules {
+    display: grid;
+    gap: 5px;
+}
+
+.radar-rule {
+    display: grid;
+
+    grid-template-columns:
+        28px minmax(0, 1fr);
+
+    gap: 4px;
+
+    align-items: center;
+
+    padding: 7px 8px;
+
+    background: #111827;
+
+    border: 1px solid #334155;
+    border-radius: 6px;
+}
+
+.radar-rule-number {
+    color: #64748B;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.radar-rule-body {
+    min-width: 0;
+}
+
+.radar-rule-body strong {
+    display: block;
+
+    color: #E2E8F0;
+
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.radar-rule-body span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #94A3B8;
+
+    font-size: 10px;
+    line-height: 1.35;
+}
+
+.radar-default-rule.candidate {
+    background: #143322;
+
+    border: 2px solid #4ADE80;
+}
+
+
+/* ==========================================================
+   回答
+========================================================== */
+
+.radar-answer-panel {
+    scroll-margin-top: 10px;
+}
+
+.radar-matched-rule {
+    margin-bottom: 8px;
+
+    color: #FACC15;
+
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 900;
+}
+
+.radar-answer-order {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 2px;
+
+    align-items: stretch;
+}
+
+.radar-answer-item {
+    position: relative;
+
+    min-width: 0;
+}
+
+.radar-answer-card {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    min-height: 112px;
+
+    box-sizing: border-box;
+
+    padding: 5px 2px;
+
+    background: #111827;
+
+    border: 1px solid #334155;
+    border-radius: 7px;
+}
+
+.radar-answer-number {
+    color: #94A3B8;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.radar-answer-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+}
+
+.radar-answer-icon .radar-shape-svg {
+    width: 48px;
+    height: 38px;
+}
+
+.radar-answer-shape {
+    color: #4ADE80;
+
+    text-align: center;
+
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+.radar-answer-arrow {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+    right: -7px;
+
+    transform:
+        translateY(-50%);
+
+    color: #64748B;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.radar-complete {
+    display: block;
+
+    width: 100%;
+    min-height: 50px;
+
+    margin-top: 10px;
+
+    background: #15803D;
+    color: #FFFFFF;
+
+    border: 2px solid #22C55E;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.radar-complete:disabled {
+    opacity: 0.4;
+}
+
+
+/* ==========================================================
+   小型スマホ
+========================================================== */
+
+@media (max-width: 370px) {
+
+    .radar-shape-header {
+        grid-template-columns:
+            minmax(60px, 1fr)
+            55px
+            minmax(48px, 1fr);
+    }
+
+    .radar-color-button {
+        min-height: 36px;
+
+        font-size: 12px;
+    }
+
+    .radar-answer-card {
+        min-height: 100px;
+    }
+
+    .radar-answer-icon .radar-shape-svg {
+        width: 42px;
+        height: 34px;
+    }
+
+    .radar-answer-shape {
+        font-size: 9px;
+    }
+
+    .radar-answer-number {
+        font-size: 8px;
+    }
+}
+
+/* ==========================================================
+   10 レーダー
+   自動スクロール位置調整
+========================================================== */
+
+.radar-shape-row {
+    scroll-margin-top: 80px;
+    scroll-margin-bottom: 80px;
+}
+/* ==========================================================
+   10 レーダー
+   スムーススクロール位置調整
+========================================================== */
+
+.radar-shape-row {
+    scroll-margin-top: 80px;
+    scroll-margin-bottom: 80px;
+}
+
+.radar-answer-panel {
+    scroll-margin-top: 80px;
+}
+/* ==========================================================
+   10 レーダー
+   自動スクロール位置
+========================================================== */
+
+.radar-shape-row {
+    scroll-margin-top: 80px;
+    scroll-margin-bottom: 80px;
+}
+
+.radar-answer-panel {
+    scroll-margin-top: 80px;
+}
+/* ==========================================================
+   10 レーダー
+   色入力リセットボタン
+========================================================== */
+
+#radarResetColors {
+    background: #dc2626;
+    border-color: #ef4444;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#radarResetColors:hover:not(:disabled) {
+    background: #ef4444;
+    border-color: #f87171;
+}
+
+#radarResetColors:active:not(:disabled) {
+    background: #b91c1c;
+}
+
+#radarResetColors:disabled {
+    background: #7f1d1d;
+    border-color: #991b1b;
+    color: #fca5a5;
+    opacity: 0.55;
+}
+/* ==========================================================
+   11 コードワード・プロトコル
+========================================================== */
+
+.codeword-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 32px;
+}
+
+
+/* 注意 */
+
+.codeword-warning {
+    color: #f6c56b;
+    background: #382a2a;
+    border-left: 4px solid #f97316;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+
+/* 現在ラウンド */
+
+.codeword-current-round {
+    position: sticky;
+    top: 8px;
+    z-index: 10;
+
+    padding: 12px 16px;
+
+    color: #facc15;
+    background: #1e293b;
+
+    border: 2px solid #facc15;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: 900;
+    text-align: center;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+/* パネル */
+
+.codeword-panel {
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.codeword-panel h3 {
+    margin: 0 0 14px;
+    color: #f8fafc;
+    font-size: 18px;
+}
+
+
+/* ==========================================================
+   色ボタン
+========================================================== */
+
+.codeword-color-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.codeword-color-button {
+    min-width: 0;
+    min-height: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    color: var(--codeword-color);
+    background: #172033;
+
+    border: 1px solid #475569;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.codeword-color-button:not(:disabled):active {
+    transform: scale(0.96);
+    background: #334155;
+}
+
+.codeword-color-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.codeword-color-dot {
+    width: 17px;
+    height: 17px;
+
+    background: var(--codeword-color);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+
+/* ==========================================================
+   操作ボタン
+========================================================== */
+
+.codeword-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.codeword-secondary,
+.codeword-reset {
+    min-height: 44px;
+    border-radius: 7px;
+    font-weight: 800;
+}
+
+.codeword-secondary {
+    color: #f8fafc;
+    background: #334155;
+    border: 1px solid #475569;
+}
+
+
+/* 最初からは赤 */
+
+.codeword-reset {
+    color: #ffffff;
+    background: #dc2626;
+    border: 1px solid #ef4444;
+}
+
+.codeword-reset:not(:disabled):active {
+    background: #b91c1c;
+}
+
+.codeword-secondary:disabled,
+.codeword-reset:disabled {
+    opacity: 0.4;
+}
+
+
+/* ==========================================================
+   コードワード表
+========================================================== */
+
+.codeword-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.codeword-table {
+    min-width: 580px;
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        repeat(4, minmax(115px, 1fr));
+
+    background: #111827;
+
+    border: 1px solid #334155;
+}
+
+
+/* 左列 / ラウンド列 */
+
+.codeword-color-column,
+.codeword-round-column {
+    display: grid;
+    grid-template-rows:
+        52px
+        repeat(5, 48px);
+}
+
+
+/* 現在ラウンド */
+
+.codeword-round-column {
+    border: 2px solid transparent;
+    scroll-margin-inline: 20px;
+}
+
+.codeword-round-column.current {
+    border: 2px solid #facc15;
+    background: rgba(250, 204, 21, 0.04);
+}
+
+
+/* 入力済みラウンド */
+
+.codeword-round-column.completed
+.codeword-table-header {
+    color: #4ade80;
+}
+
+
+/* ヘッダー */
+
+.codeword-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #94a3b8;
+    background: #1e293b;
+
+    border-right: 1px solid #475569;
+    border-bottom: 1px solid #334155;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* 色名 */
+
+.codeword-table-color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111827;
+
+    border-right: 1px solid #475569;
+    border-bottom: 1px solid #334155;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* コードワード */
+
+.codeword-word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f8fafc;
+    background: #111827;
+
+    border-right: 1px solid #475569;
+    border-bottom: 1px solid #334155;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+
+/* 選択されたコードワード */
+
+.codeword-word.selected {
+    color: #facc15;
+    background: #3a3215;
+
+    border: 2px solid #facc15;
+
+    font-size: 19px;
+}
+
+
+/* ==========================================================
+   回答
+========================================================== */
+
+.codeword-answer-panel {
+    scroll-margin-top: 80px;
+}
+
+.codeword-answer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.codeword-answer-card {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 12px 6px;
+
+    background: #172033;
+
+    border: 1px solid #475569;
+    border-radius: 8px;
+}
+
+.codeword-answer-round {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.codeword-answer-color {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.codeword-answer-word {
+    color: #64748b;
+    font-size: 18px;
+    font-weight: 900;
+    word-break: break-word;
+}
+
+.codeword-answer-word.filled {
+    color: #facc15;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.codeword-complete {
+    width: 100%;
+    min-height: 50px;
+
+    margin-top: 14px;
+
+    color: #ffffff;
+    background: #166534;
+
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.codeword-complete:disabled {
+    opacity: 0.4;
+}
+
+.codeword-complete:not(:disabled):active {
+    background: #14532d;
+}
+
+
+/* ==========================================================
+   小さいスマホ
+========================================================== */
+
+@media (max-width: 370px) {
+
+    .codeword-color-buttons {
+        gap: 4px;
+    }
+
+    .codeword-color-button {
+        min-height: 54px;
+        padding: 4px 2px;
+        font-size: 13px;
+    }
+
+    .codeword-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .codeword-answer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* ==========================================================
+   11 コードワード
+   表の「画面の色」をボタン化
+========================================================== */
+
+.codeword-table-color-button {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 0 6px;
+
+    color: var(--codeword-color);
+    background: #111827;
+
+    border: 0;
+    border-right: 1px solid #475569;
+    border-bottom: 1px solid #334155;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.codeword-table-color-button:not(:disabled):active {
+    background: #334155;
+    transform: scale(0.96);
+}
+
+.codeword-table-color-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+
+/* 色の丸 */
+
+.codeword-table-color-dot {
+    width: 14px;
+    height: 14px;
+
+    flex: 0 0 14px;
+
+    border-radius: 50%;
+
+    background: var(--codeword-color);
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+
+/* 操作ボタンはコードワード表のすぐ下 */
+
+.codeword-controls {
+    margin-top: 12px;
+}
+/* ==========================================================
+   12 損傷報告プロトコル
+========================================================== */
+
+.damage-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 32px;
+}
+
+.damage-warning {
+    color: #fbbf24;
+    background: #332b17;
+    border-left: 4px solid #f59e0b;
+    padding: 11px 13px;
+    line-height: 1.65;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.damage-panel {
+    padding: 14px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+.damage-panel h3 {
+    margin: 0 0 12px;
+    color: #f8fafc;
+    font-size: 18px;
+}
+
+
+/* ==========================================================
+   飛行機
+========================================================== */
+
+.damage-airplane-wrap {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto 12px;
+
+    background: #0f172a;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.damage-airplane-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   飛行機上の選択マーカー
+========================================================== */
+
+.damage-airplane-marker {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    transform: translate(-50%, -50%);
+
+    border: 2px solid rgba(34, 211, 238, 0.75);
+    border-radius: 50%;
+
+    background: rgba(34, 211, 238, 0.18);
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.damage-airplane-marker.damaged {
+    background: rgba(244, 67, 54, 0.85);
+    border-color: #ff6b6b;
+
+    box-shadow:
+        0 0 10px rgba(244, 67, 54, 0.75);
+}
+
+
+/* 位置 */
+
+.damage-marker-nose {
+    left: 50%;
+    top: 14%;
+}
+
+.damage-marker-tail {
+    left: 50%;
+    top: 84%;
+}
+
+.damage-marker-left-wing {
+    left: 24%;
+    top: 60%;
+}
+
+.damage-marker-right-wing {
+    left: 76%;
+    top: 60%;
+}
+
+.damage-marker-left-jet {
+    left: 29.5%;
+    top: 50.5%;
+}
+
+.damage-marker-right-jet {
+    left: 70.5%;
+    top: 50.5%;
+}
+
+
+/* ==========================================================
+   部位ボタン
+========================================================== */
+
+.damage-part-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.damage-part-button {
+    min-height: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    color: #cbd5e1;
+    background: #334155;
+
+    border: 2px solid #475569;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.damage-part-button strong {
+    font-size: 15px;
+}
+
+.damage-part-state {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* 損傷あり */
+
+.damage-part-button.damaged {
+    color: #ffffff;
+    background: #991b1b;
+    border-color: #f44343;
+
+    box-shadow:
+        0 0 0 1px rgba(244, 67, 54, 0.3);
+}
+
+.damage-part-button.damaged
+.damage-part-state {
+    color: #fecaca;
+}
+
+.damage-part-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ==========================================================
+   現在の損傷
+========================================================== */
+
+.damage-current-status {
+    margin-top: 12px;
+    padding: 10px;
+
+    color: #cbd5e1;
+    background: #111c2c;
+
+    border: 1px solid #334155;
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   リセット
+========================================================== */
+
+.damage-reset {
+    width: 100%;
+    min-height: 44px;
+
+    margin-top: 10px;
+
+    color: #ffffff;
+    background: #dc2626;
+
+    border: 1px solid #ef4444;
+    border-radius: 7px;
+
+    font-weight: 800;
+}
+
+.damage-reset:active {
+    background: #b91c1c;
+}
+
+
+/* ==========================================================
+   報告コード
+========================================================== */
+
+.damage-code-panel {
+    scroll-margin-top: 80px;
+}
+
+.damage-code {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #64748b;
+    background: #0f172a;
+
+    border: 1px solid #334155;
+    border-radius: 9px;
+
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 8px;
+
+    transition:
+        color 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+.damage-code.matched {
+    color: #facc15;
+    background: #29250f;
+    border-color: #facc15;
+
+    text-shadow:
+        0 0 12px rgba(250, 204, 21, 0.35);
+}
+
+.damage-code-message {
+    margin-top: 8px;
+
+    color: #94a3b8;
+
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.damage-complete {
+    width: 100%;
+    min-height: 50px;
+
+    margin-top: 14px;
+
+    color: #ffffff;
+    background: #15803d;
+
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.damage-complete:disabled {
+    opacity: 0.4;
+}
+
+.damage-complete:not(:disabled):active {
+    background: #166534;
+}
+
+/* ==========================================================
+   13 最終安定化プロトコル
+========================================================== */
+
+.final-stabilization-content {
+    padding-bottom: 32px;
+}
+
+
+/* メイン */
+
+.final-stabilization-panel {
+    position: relative;
+
+    padding: 16px;
+
+    background: #111827;
+
+    border: 2px solid #d9a928;
+    border-radius: 10px;
+}
+
+
+/* FINAL */
+
+.final-stabilization-badge {
+    width: fit-content;
+
+    margin: 0 auto 14px;
+
+    padding: 6px 18px;
+
+    color: #111827;
+    background: #f2b93b;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* 説明 */
+
+.final-stabilization-message {
+    margin-bottom: 14px;
+
+    color: #e2e8f0;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   表
+========================================================== */
+
+.final-stabilization-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #465267;
+    border-radius: 8px;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.final-stabilization-table {
+    width: 100%;
+
+    min-width: 520px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+/* 列幅 */
+
+.final-stabilization-table th:nth-child(1),
+.final-stabilization-table td:nth-child(1) {
+    width: 28%;
+}
+
+.final-stabilization-table th:nth-child(2),
+.final-stabilization-table td:nth-child(2) {
+    width: 27%;
+}
+
+.final-stabilization-table th:nth-child(3),
+.final-stabilization-table td:nth-child(3) {
+    width: 45%;
+}
+
+
+/* ヘッダー */
+
+.final-stabilization-table th {
+    height: 50px;
+
+    padding: 8px 10px;
+
+    color: #e9b949;
+    background: #203047;
+
+    border-right: 1px solid #526074;
+    border-bottom: 1px solid #526074;
+
+    text-align: left;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.final-stabilization-table th span {
+    font-size: 11px;
+}
+
+
+/* セル */
+
+.final-stabilization-table td {
+    height: 48px;
+
+    padding: 8px 10px;
+
+    color: #e2e8f0;
+    background: #151d2c;
+
+    border-right: 1px solid #465267;
+    border-bottom: 1px solid #465267;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* 右レバー */
+
+.final-stabilization-table
+.final-direction {
+    color: #f2c94c;
+
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* 最後の4:30+ */
+
+.final-stabilization-table
+.final-row td {
+    background: #2a2426;
+}
+
+
+/* 最後の線 */
+
+.final-stabilization-table
+tr:last-child td {
+    border-bottom: 0;
+}
+
+.final-stabilization-table
+th:last-child,
+.final-stabilization-table
+td:last-child {
+    border-right: 0;
+}
+
+
+/* ==========================================================
+   CLEAR
+========================================================== */
+
+.final-stabilization-complete {
+    width: 100%;
+    min-height: 52px;
+
+    margin-top: 16px;
+
+    color: #ffffff;
+    background: #15803d;
+
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.final-stabilization-complete:active {
+    background: #166534;
+    transform: scale(0.99);
+}
+
+
+/* ==========================================================
+   小さいスマホ
+========================================================== */
+
+@media (max-width: 420px) {
+
+    .final-stabilization-panel {
+        padding: 12px;
+    }
+
+    .final-stabilization-message {
+        font-size: 13px;
+    }
+}
